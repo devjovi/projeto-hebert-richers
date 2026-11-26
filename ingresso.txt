@@ -1,0 +1,26 @@
+class ingresso:
+    def __init__(self, codigo: str, nome_eventos: str, valor_base: str):
+        self.codigo = codigo
+        self.nome_eventos = nome_eventos
+        self.valor_base = valor_base
+
+    def calcular_valor_final(self) -> float:
+        return self.valor_base
+
+class ingresso_padrao:
+    def calcular_valor_final(self) -> float:
+        return self.valor_base
+
+class ingressoVIP(ingresso):
+    def __init__(self, codigo: str, nome_eventos: str, valor_base: float, beneficio: list[str] | None = None):
+        super().__init__(codigo, nome_eventos, valor_base)
+        self.beneficio = beneficio if beneficio is not None else ["Acesso VIP", "Acesso prioritario"]
+
+    def calcular_valor_final(self):
+        return round(self.valor_base * 1.20)
+        
+
+
+
+
+        
