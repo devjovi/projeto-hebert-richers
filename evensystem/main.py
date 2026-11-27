@@ -1,3 +1,6 @@
+eventos_categoria = ('Show','Teatro','Workshop','Palestra')
+cpf_usuario = set()
+cpf_admin = set()
 print('=' * 130)
 print('EVENTSYS'.center(130))
 print('=' * 130)
@@ -34,6 +37,12 @@ while True:
             if not cpf:
                 print('ERRO: O CPF não pode ficar vazio!')
                 continue
+            if len(cpf) == 11:
+                print('CPF cadastrado com sucesso')
+                cpf_usuario.add(cpf)
+            else:
+                print('ERRO: CPF invalido tente novamente')
+                continue
 
             print('\nCadastro realizado com sucesso!')
             print(f'Nome: {nome}')
@@ -42,7 +51,7 @@ while True:
 
         elif opcao == '2':
             print('\nCONSULTAR EVENTOS')
-            print('Funcionalidade em desenvolvimento!')
+            print(evento_categoria)
 
         elif opcao == '3':
             print('\nCOMPRAR INGRESSOS')
